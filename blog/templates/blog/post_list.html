@@ -5,22 +5,17 @@
     <title>Alex's blog;)</title>
 </head>
 <body>
-
 <div>
     <h1><a href="/">Alex's blog;)</a></h1>
 </div>
 
-<div>
-    <p>published: 01.02.2020, 14:32</p>
-    <h2><a href="">My first post</a></h2>
-    <p>Сегодня день когда я по тихоньку начинаю что то делать)</p>
-</div>
-
-<div>
-    <p>published: 01.02.2020, 12:14</p>
-    <h2><a href="">My second post</a></h2>
-    <p>Конец</p>
-</div>
+{% for post in posts %}
+   <div>
+      <p>published: {{ post.published_date }}</p>
+       <h1><a href="">{{ post.title }}</a> </h1>
+       <p>{{ post.text|linebreaksbr }}</p>
+   </div>
+{% endfor %}
 
 </body>
 </html>
